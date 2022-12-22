@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  nwaku.public.dappnode.eth:
+    image: "nwaku.public.dappnode.eth:0.1.0"
+    build:
+      context: nwaku
+      args:
+        UPSTREAM_VERSION: v0.13.0
+    ports:
+      - "30304:30304/tcp"
+      - "30304:30304/udp"
+      - "9005:9005/udp"
+    environment:
+      EXTRA_OPTS: ""
+    restart: unless-stopped
+    volumes:
+      - "nwakudb:/data"
+volumes:
+  nwakudb: {}

@@ -1,0 +1,33 @@
+{
+  "name": "nwaku.public.dappnode.eth",
+  "version": "0.1.0",
+  "upstreamVersion": "v0.13.0",
+  "architectures": ["linux/amd64"],
+  "upstreamRepo": "waku-org/nwaku",
+  "upstreamArg": "UPSTREAM_VERSION",
+  "shortDescription": "Waku node and protocol",
+  "description": "Waku node and protocol",
+  "type": "service",
+  "author": "rndlabs <packages@rndlabs.xyz> (https://github.com/rndlabs)",
+  "contributors": [
+    "mfw78 <mfw78@rndlabs.xyz> (https://github.com/mfw78)"
+  ],
+  "categories": ["Communications"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rndlabs/dappnodepackage-nwaku.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rndlabs/dappnodepackage-nwaku/issues"
+  },
+  "links": {
+    "homepage": "https://waku.org"
+  },
+  "license": "GPL-3.0",
+  "globalEnvs": [
+    {
+      "envs": ["DOMAIN", "PUBLIC_IP"],
+      "services": ["nwaku.public.dappnode.eth"]
+    }
+  ]
+}

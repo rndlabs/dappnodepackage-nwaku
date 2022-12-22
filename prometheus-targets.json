@@ -1,0 +1,8 @@
+[
+    {
+      "labels": {
+        "job": "nwaku"
+      },
+      "targets": ["nwaku.public.dappnode:8003"]
+    }
+]
