@@ -29,5 +29,13 @@
       "envs": ["DOMAIN", "PUBLIC_IP"],
       "services": ["nwaku.public.dappnode.eth"]
     }
+  ],
+  "exposable": [
+    {
+      "name": "nwaku",
+      "description": "Waku node and protocol",
+      "port": 60000,
+      "fromSubdomain": "nwaku"
+    }
   ]
 }
