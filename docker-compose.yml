@@ -10,31 +10,11 @@ services:
       - "60000:60000/tcp"
       - "60000:60000/udp"
       - "9005:9005/udp"
-    command:
-      - --filter
-      - --lightpush
-      - --store
-      - --rpc-admin
-      - --keep-alive
-      - --max-connections:150
-      - --dns-discovery
-      - --dns-discovery-url=enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@prod.nodes.status.im
-      - --discv5-discovery
-      - --discv5-udp-port:9005
-      - --discv5-enr-auto-update
-      - --log-level:DEBUG
-      - --rpc-port:8545
-      - --rpc-address:0.0.0.0
-      - --tcp-port:60000
-      - --metrics-server
-      - --metrics-server-port=8003
-      - --metrics-server-address=0.0.0.0
-      - --store-message-db-url:sqlite:///data/store.sqlite3
-      - --store-message-retention-policy:time:2592000
-      - --nat:extip:${_DAPPNODE_GLOBAL_PUBLIC_IP}
-      - --dns4-domain-name:nwaku.${_DAPPNODE_GLOBAL_DOMAIN}
-      - ${EXTRA_OPTS}
     environment:
+      DNS_DISCOVERY_URL: "enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@prod.nodes.status.im"
+      LOG_LEVEL: "DEBUG"
+      MAX_CONNECTIONS: 150
+      STORE_MESSAGE_RETENTION_POLICY: 2592000
       EXTRA_OPTS: ""
     restart: unless-stopped
     volumes:
