@@ -27,14 +27,15 @@
   "globalEnvs": [
     {
       "envs": ["DOMAIN", "PUBLIC_IP"],
-      "services": ["nwaku.public.dappnode.eth"]
+      "services": ["nwaku"]
     }
   ],
   "exposable": [
     {
       "name": "nwaku",
       "description": "Waku node and protocol",
-      "port": 60000,
+      "serviceName": "websockify",
+      "port": 80,
       "fromSubdomain": "nwaku"
     }
   ]
