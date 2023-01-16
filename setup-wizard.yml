@@ -1,0 +1,15 @@
+version: "2"
+fields:
+  - title: Randomize node adddress
+    id: randomize-address
+    description: >-
+      By default, waku randomly generates a different address each time it starts. This is done for privacy reasons. Should you wish to
+      maintain a consistent address, disable this feature by selecting false.
+    target:
+      type: environment
+      name: RANDOMIZE_ADDRESS
+      service: nwaku
+    required: true
+    enum:
+      - "true"
+      - "false"

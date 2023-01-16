@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# If RANDOMIZE_ADDRESS is set to false, use the same address every time
+# If identity.pem does not exist, generate a new one
+if [ "${RANDOMIZE_ADDRESS}" = "false" ]; then
+    if [ ! -f /data/identity.pem ]; then
+        echo "Generating new identity"
+        # Generate new identity using openssl
+        /usr/bin/openssl ecparam -name secp256k1 -genkey -noout -out /data/identity.pem
+    fi
+    # Extract 32 byte private key from identity.pem
+    _PRIVATE_KEY=$(cat /data/identity.pem | /usr/bin/openssl ec -text -noout | grep priv -A 3 | tail -n +2 | tr -d '\n[:space:]:' | xxd -r -p | xxd -p -c 32)
+    # Set environment variable WAKUNODEV2_NODEKEY to private key
+    export WAKUNODE2_NODEKEY=${_PRIVATE_KEY}
+fi
+
+
 # Execute passing in public IP address and domain
 exec /usr/bin/wakunode --filter \
     --lightpush \

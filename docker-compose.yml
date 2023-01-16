@@ -21,6 +21,7 @@ services:
       LOG_LEVEL: DEBUG
       MAX_CONNECTIONS: 150
       STORE_MESSAGE_RETENTION_POLICY: 2592000
+      RANDOMIZE_ADDRESS: "true"
       EXTRA_OPTS: ""
     restart: unless-stopped
     volumes:
