@@ -22,7 +22,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 86,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -370,7 +370,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "Bps"
         },
         "overrides": []
       },
@@ -401,7 +402,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "(increase(libp2p_network_bytes_total{instance=\"nwaku.nwaku.public.dappnode:9090\",direction=\"in\"}[15m]))/1000000/(900)*8",
+          "expr": "rate(libp2p_network_bytes_total{instance=\"nwaku.nwaku.public.dappnode:9090\", direction=\"in\"}[$__rate_interval])",
           "interval": "",
           "legendFormat": "{{direction}}",
           "range": true,
@@ -414,7 +415,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "(increase(libp2p_network_bytes_total{instance=\"nwaku.nwaku.public.dappnode:9090\",direction=\"out\"}[15m]))/1000000/(900)*8",
+          "expr": "rate(libp2p_network_bytes_total{instance=\"nwaku.nwaku.public.dappnode:9090\",direction=\"out\"}[$__rate_interval])",
           "hide": false,
           "interval": "",
           "legendFormat": "{{direction}}",
@@ -422,7 +423,7 @@
           "refId": "B"
         }
       ],
-      "title": "Rx/Tx Traffic (Mbps)",
+      "title": "Rx/Tx Traffic (MBps)",
       "type": "timeseries"
     },
     {
@@ -1198,6 +1199,6 @@
   "timepicker": {},
   "timezone": "",
   "title": "nwaku single node dashboard",
-  "uid": "Vcx3GJ2Vk",
-  "version": 8
+  "uid": "nwaku-public-Vcx3GJ2Vk",
+  "version": 4
 }
