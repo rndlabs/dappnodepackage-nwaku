@@ -1,5 +1,20 @@
 version: "2"
 fields:
+  - title: Network
+    id: network
+    description: >-
+      By default waku will connect to the `wakuv2.prod` network. This is the main network for waku. You can also connect to the `wakuv2.test` network
+      which is a test network for waku. Additionally, status run their own networks as well that you may connect to.
+    target:
+      type: environment
+      name: NETWORK
+      service: nwaku
+    required: true
+    enum:
+      - "wakuv2.prod"
+      - "wakuv2.test"
+      - "status.test"
+      - "status.prod"
   - title: Randomize node adddress
     id: randomize-address
     description: >-

@@ -14,6 +14,30 @@ if [ "${RANDOMIZE_ADDRESS}" = "false" ]; then
     export WAKUNODE2_NODEKEY=${_PRIVATE_KEY}
 fi
 
+# If DNS_DISCOVERY_URL is not set, use NETWORK to determine which DNS discovery URL to use
+# NETWORK may be wakuv2.prod, wakuv2.test, status.prod or status.test
+if [ -z "${DNS_DISCOVERY_URL}" ]; then
+    case "${NETWORK}" in
+        wakuv2.prod)
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@prod.waku.nodes.status.im"
+            ;;
+        wakuv2.test)
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@test.waku.nodes.status.im"
+            ;;
+        status.prod)
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@prod.nodes.status.im"
+            ;;
+        status.test)
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@test.nodes.status.im"
+            ;;
+        *)
+            echo "NETWORK must be set to wakuv2.prod, wakuv2.test, status.prod or status.test"
+            exit 1
+            ;;
+    esac
+else
+    export WAKUNODE2_DNS_DISCOVERY_URL=${DNS_DISCOVERY_URL}
+fi
 
 # Execute passing in public IP address and domain
 exec /usr/bin/wakunode --relay=true \
@@ -24,7 +48,6 @@ exec /usr/bin/wakunode --relay=true \
     --keep-alive=true \
     --max-connections=${MAX_CONNECTIONS:-150} \
     --dns-discovery=true \
-    --dns-discovery-url=${DNS_DISCOVERY_URL} \
     --discv5-discovery=true \
     --discv5-udp-port=9005 \
     --discv5-enr-auto-update=True \

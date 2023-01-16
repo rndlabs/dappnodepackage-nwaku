@@ -16,12 +16,12 @@ services:
       - "60000:60000/udp"
       - "9005:9005/udp"
     environment:
-      DNS_DISCOVERY_URL: >-
-        enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@prod.waku.nodes.status.im
+      DNS_DISCOVERY_URL: ""
       LOG_LEVEL: DEBUG
       MAX_CONNECTIONS: 150
       STORE_MESSAGE_RETENTION_POLICY: 2592000
       RANDOMIZE_ADDRESS: "true"
+      NETWORK: "wakuv2.prod"
       EXTRA_OPTS: ""
     restart: unless-stopped
     volumes:
