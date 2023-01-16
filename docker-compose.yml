@@ -10,7 +10,7 @@ services:
     build:
       context: nwaku
       args:
-        UPSTREAM_VERSION: v0.13.0
+        UPSTREAM_VERSION: v0.14.0
     ports:
       - "60000:60000/tcp"
       - "60000:60000/udp"
@@ -21,7 +21,7 @@ services:
       MAX_CONNECTIONS: 150
       STORE_MESSAGE_RETENTION_POLICY: 2592000
       RANDOMIZE_ADDRESS: "true"
-      NETWORK: "wakuv2.prod"
+      NETWORK: wakuv2.prod
       EXTRA_OPTS: ""
     restart: unless-stopped
     volumes:
