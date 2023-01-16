@@ -16,22 +16,23 @@ fi
 
 
 # Execute passing in public IP address and domain
-exec /usr/bin/wakunode --filter \
-    --lightpush \
-    --store \
-    --rpc-admin \
-    --keep-alive \
-    --max-connections:${MAX_CONNECTIONS:-150} \
-    --dns-discovery \
+exec /usr/bin/wakunode --relay=true \
+    --filter=true \
+    --lightpush=true \
+    --store=true \
+    --rpc-admin=true \
+    --keep-alive=true \
+    --max-connections=${MAX_CONNECTIONS:-150} \
+    --dns-discovery=true \
     --dns-discovery-url=${DNS_DISCOVERY_URL} \
-    --discv5-discovery \
-    --discv5-udp-port:9005 \
-    --discv5-enr-auto-update \
-    --log-level:${LOG_LEVEL:-DEBUG} \
-    --rpc-port:8545 \
-    --rpc-address:0.0.0.0 \
-    --tcp-port:60000 \
-    --metrics-server \
+    --discv5-discovery=true \
+    --discv5-udp-port=9005 \
+    --discv5-enr-auto-update=True \
+    --log-level=${LOG_LEVEL:-DEBUG} \
+    --rpc-port=8545 \
+    --rpc-address=0.0.0.0 \
+    --tcp-port=60000 \
+    --metrics-server=True \
     --metrics-server-port=9090 \
     --metrics-server-address=0.0.0.0 \
     --store-message-db-url:sqlite:///data/store.sqlite3 \
