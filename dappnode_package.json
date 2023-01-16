@@ -30,6 +30,16 @@
       "services": ["nwaku"]
     }
   ],
+  "backup": [
+    {
+      "name": "identity",
+      "path": "/data/identity.pem"
+    },
+    {
+      "name": "store",
+      "path": "/data/store.sqlite3"
+    }
+  ],
   "exposable": [
     {
       "name": "nwaku",
