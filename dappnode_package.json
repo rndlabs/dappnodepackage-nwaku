@@ -6,7 +6,7 @@
   "upstreamRepo": "waku-org/nwaku",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Waku node and protocol",
-  "description": "Waku node and protocol",
+  "description": "Waku is the communication layer for Web3. Decentralized communication that scales. Private. Secure. Runs anywhere.",
   "type": "service",
   "author": "rndlabs <packages@rndlabs.xyz> (https://github.com/rndlabs)",
   "contributors": [

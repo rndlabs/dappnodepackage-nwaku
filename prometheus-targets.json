@@ -3,6 +3,6 @@
       "labels": {
         "job": "nwaku"
       },
-      "targets": ["nwaku.public.dappnode:9090"]
+      "targets": ["nwaku.nwaku.public.dappnode:9090"]
     }
 ]
