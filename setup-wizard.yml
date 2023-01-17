@@ -15,6 +15,33 @@ fields:
       - "wakuv2.test"
       - "status.test"
       - "status.prod"
+  - title: Privacy settings
+    id: privacy
+    description: >-
+      Waku is designed to be a privacy-preserving protocol. The user can selectively enable privacy features. On dappnode, by 
+      default a custom level of privacy is enabled (notably the `agent-string` is set to `nwaku_on_dappnode`).
+
+      The `paranoid` level of privacy will disable the `agent-string` and will randomize the node address each time it starts. 
+      The `paranoid` level of privacy is recommended for users who wish to maximize their privacy.
+    target:
+      type: environment
+      name: PRIVACY
+      service: nwaku
+    required: true
+    enum:
+      - "paranoid"
+      - "custom"
+  - title: Agent name
+    id: agent-name
+    description: >-
+      By default this dappnode package will set the agent name to `nwaku_on_dappnode`. This allows other nodes on the network to identify this 
+      node as a dappnode node running waku. If you wish to use a different name, specify it here. Optionally, you can set the default nwaku
+      agent name setting this to an empty string (the ndoe will present itself with the agent name `nwaku`).
+    target:
+      type: environment
+      name: WAKUNODE2_AGENT_STRING
+      service: nwaku
+    if: { "privacy": { "enum": [ "custom" ] } }
   - title: Randomize node adddress
     id: randomize-address
     description: >-
@@ -28,3 +55,75 @@ fields:
     enum:
       - "true"
       - "false"
+    if: { "privacy": { "enum": [ "custom" ] } }
+  - title: Experimental features
+    id: experimental-features
+    description: >-
+      By default, this nwaku will enable features only considered stable. If you wish to enable experimental features, select true.
+    target:
+      type: environment
+      name: EXPERIMENTAL_FEATURES
+      service: nwaku
+    required: true
+    enum:
+      - "true"
+      - "false"
+  - title: ⚠️ Filter protocol
+    id: filter
+    description: >-
+      By default, waku will not enable the [filter protocol](https://rfc.vac.dev/spec/12/). If you wish to enable the filter protocol, select true.
+    target:
+      type: environment
+      name: WAKUNODE2_FILTER
+      service: nwaku
+    required: true
+    enum:
+      - "true"
+      - "false"
+    if: { "experimental-features": { "enum": [ "true" ] } }
+  - title: ⚠️ Store protocol
+    id: store
+    description: >-
+      By default, waku will not enable the [store protocol](https://rfc.vac.dev/spec/13/). If you wish to enable the store protocol, select true.
+    target:
+      type: environment
+      name: WAKUNODE2_STORE
+      service: nwaku
+    required: true
+    enum:
+      - "true"
+      - "false"
+    if: { "experimental-features": { "enum": [ "true" ] } }
+  - title: "⚠️ Store: Message database URL"
+    id: store-message-database-url
+    description: >-
+      By default, waku will use an in-memory database for storing messages. If you wish to use a different database, specify the URL here.
+    target:
+      type: environment
+      name: WAKUNODE2_STORE_MESSAGE_DB_URL
+      service: nwaku
+    required: true
+    if: { "store": { "enum": [ "true" ] }, "experimental-features": { "enum": [ "true" ] } }
+  - title: "⚠️ Store: Message retention policy"
+    id: message-retention-policy
+    description: >-
+      By default, waku will store messages for 2 days. If you wish to enable the message retention policy, select true.
+    target:
+      type: environment
+      name: WAKUNODE2_STORE_MESSAGE_RETENTION_POLICY
+      service: nwaku
+    required: true
+    if: { "store": { "enum": [ "true" ] }, "experimental-features": { "enum": [ "true" ] } }
+  - title: ⚠️ Light Push protocol
+    id: lightpush
+    description: >-
+      By default, waku will not enable the [light push protocol](https://rfc.vac.dev/spec/19/). If you wish to enable the light push protocol, select true.
+    target:
+      type: environment
+      name: WAKUNODE2_LIGHTPUSH
+      service: nwaku
+    required: true
+    enum:
+      - "true"
+      - "false"
+    if: { "experimental-features": { "enum": [ "true" ] } }

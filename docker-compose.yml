@@ -19,8 +19,15 @@ services:
       DNS_DISCOVERY_URL: ""
       LOG_LEVEL: DEBUG
       MAX_CONNECTIONS: 150
-      STORE_MESSAGE_RETENTION_POLICY: 2592000
+      PRIVACY: custom
+      WAKUNODE2_AGENT_STRING: nwaku_on_dappnode
       RANDOMIZE_ADDRESS: "true"
+      EXPERIMENTAL_FEATURES: "false"
+      WAKUNODE2_STORE: "false"
+      WAKUNODE2_STORE_MESSAGE_DB_URL: "sqlite:///data/store.sqlite3"
+      WAKUNODE2_STORE_MESSAGE_RETENTION_POLICY: "time:2592000"
+      WAKUNODE2_FILTER: "false"
+      WAKUNODE2_LIGHTPUSH: "false"
       NETWORK: wakuv2.prod
       EXTRA_OPTS: ""
     restart: unless-stopped
