@@ -56,7 +56,7 @@ fields:
       - "true"
       - "false"
     if: { "privacy": { "enum": [ "custom" ] } }
-  - title: Experimental features
+  - title: 🧪 Experimental features
     id: experimental-features
     description: >-
       By default, this nwaku will enable features only considered stable. If you wish to enable experimental features, select true.
@@ -107,7 +107,9 @@ fields:
   - title: "⚠️ Store: Message retention policy"
     id: message-retention-policy
     description: >-
-      By default, waku will store messages for 2 days. If you wish to enable the message retention policy, select true.
+      By default, this package will set waku to store messages for 30 days. If you wish to configure a different 
+      [retention policy](https://github.com/waku-org/nwaku/blob/9debd44e2aebf07eaf96b4525a4497c69aaf4445/docs/operators/how-to/configure-store.md),
+      specify it here.
     target:
       type: environment
       name: WAKUNODE2_STORE_MESSAGE_RETENTION_POLICY
