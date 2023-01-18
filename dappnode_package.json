@@ -1,7 +1,7 @@
 {
   "name": "nwaku.public.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v0.13.0",
+  "upstreamVersion": "v0.14.0",
   "architectures": ["linux/amd64"],
   "upstreamRepo": "waku-org/nwaku",
   "upstreamArg": "UPSTREAM_VERSION",
