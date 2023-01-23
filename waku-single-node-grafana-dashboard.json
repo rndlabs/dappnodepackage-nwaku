@@ -311,14 +311,14 @@
           },
           "editorMode": "builder",
           "exemplar": true,
-          "expr": "waku_connected_peers{}",
+          "expr": "libp2p_pubsub_peers{instance=\"nwaku.nwaku.public.dappnode:9090\"}",
           "interval": "",
-          "legendFormat": "{{direction}}",
+          "legendFormat": "Peers",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Inbound/Outbound Connected Peers",
+      "title": "Connected Peers",
       "type": "timeseries"
     },
     {
@@ -1193,12 +1193,12 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "nwaku single node dashboard",
   "uid": "nwaku-public-Vcx3GJ2Vk",
-  "version": 4
+  "version": 5
 }
