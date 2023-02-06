@@ -4,9 +4,9 @@ services:
     image: "statusteam/websockify:v0.10.0"
     command:
       - "80"
-      - "nwaku.nwaku.public.dappnode:60000"
+      - "nwaku.nwaku.dappnode:60000"
   nwaku:
-    image: "nwaku.nwaku.public.dappnode.eth:0.1.0"
+    image: "nwaku.nwaku.dnp.dappnode.eth:0.1.0"
     build:
       context: nwaku
       args:
