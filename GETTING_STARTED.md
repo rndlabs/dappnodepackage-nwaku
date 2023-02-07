@@ -22,3 +22,4 @@ Sites that may be of interest:
 
 * [Use Waku in Your Application](https://waku.org/platform)
 * [Examples](https://examples.waku.org)
+* [Psst, have you heard of Waku?](https://mirror.xyz/mfw78.eth/oEcvxycn1V5i1CUPiUdHcXTIZRgYunHHd-gz2LhySNE)
