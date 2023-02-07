@@ -4,7 +4,7 @@ If you are running your DAppNode within a network that has a UPnP compatible rou
 
 * TCP/UDP Port 60000 (nwaku P2P)
 * UDP Port 9005 (discovery)
-* TCP Port 443 (websockets, see [External access](#External-access) below)
+* TCP Port 443 (websockets, see *External access* below)
 
 ### External access
 
