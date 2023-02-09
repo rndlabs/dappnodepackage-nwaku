@@ -39,19 +39,18 @@ For bleeding edge protocols, such as `RLN`, the user may configure these via the
 ### Containers
 
 1. `nwaku` - the core package containing the daemon. This container inherits from the upstream found on [docker hub](https://hub.docker.com/r/statusteam/nim-waku) and provides minor modifications, notably including `openssl` and an `entrypoint.sh` script to facilitate automatic configuration based on the user's settings from the package's setup wizard.
-2. `websockify` - A simple websockets wrapper for arbitrary TCP connections.
 
 ### Websockets
 
 By default, dappnode comes installed with the `HTTPS` package, which occupies port `443`, therefore exporting port `443` is not a viable option by default. Fortunately `HTTPS` is an NGINX proxy that is able to be dynamically configured to forward DNS-scoped requests to a nominated package. As such, any external secure websockets connections take the following path:
 
-`Cloud --> NGINX Proxy (HTTPS package, SSL enabled, port 443) --> websockify (nwaku package, non-SSL, port 80) --> nwaku (nwaku package, port 60000)`
+`Cloud --> NGINX Proxy (HTTPS package, SSL enabled, port 443) --> nwaku (nwaku package, non-SSL, port 8000)`
 
 By configuring an `exposable` port in the dappnode package's configuration, dappnode will automatically:
 
 1. Acquire a dyndns hostname for DNS resolution to it's external IP address.
 2. Acquire a wildcard SSL certificate from LetsEncrypt, removing this package's requirement to deal with PKI management, greatly simplifying the structure.
-3. Handle SSL termination on NGINX, and forward the encapsulated stream to the nominated destination (websockify).
+3. Handle SSL termination on NGINX, and forward the encapsulated stream to the nominated destination (nwaku).
 
 While a lot of effort to go to, secure websockets accessed from a site delivered via HTTPS require:
 

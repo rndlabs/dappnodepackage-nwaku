@@ -1,10 +1,5 @@
 version: "3.5"
 services:
-  websockify:
-    image: "statusteam/websockify:v0.10.0"
-    command:
-      - "80"
-      - "nwaku.nwaku.dappnode:60000"
   nwaku:
     image: "nwaku.nwaku.dnp.dappnode.eth:0.1.0"
     build:
@@ -17,7 +12,7 @@ services:
       - "9005:9005/udp"
     environment:
       DNS_DISCOVERY_URL: ""
-      LOG_LEVEL: DEBUG
+      LOG_LEVEL: INFO
       MAX_CONNECTIONS: 150
       PRIVACY: custom
       WAKUNODE2_AGENT_STRING: nwaku_on_dappnode

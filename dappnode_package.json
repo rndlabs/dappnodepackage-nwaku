@@ -44,8 +44,8 @@
     {
       "name": "nwaku",
       "description": "Waku node and protocol",
-      "serviceName": "websockify",
-      "port": 80,
+      "serviceName": "nwaku",
+      "port": 8000,
       "fromSubdomain": "nwaku"
     }
   ]

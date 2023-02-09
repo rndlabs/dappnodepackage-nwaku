@@ -92,4 +92,5 @@ exec /usr/bin/wakunode --relay=true \
     --metrics-server-address=0.0.0.0 \
     --nat=extip:${_DAPPNODE_GLOBAL_PUBLIC_IP} \
     --dns4-domain-name=nwaku.${_DAPPNODE_GLOBAL_DOMAIN} \
+    --websocket-support=true \
     ${EXTRA_OPTS}
