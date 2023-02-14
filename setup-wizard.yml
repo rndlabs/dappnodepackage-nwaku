@@ -15,6 +15,18 @@ fields:
       - "wakuv2.test"
       - "status.test"
       - "status.prod"
+  - title: PubSub Topic
+    id: pubsub-topic
+    description: >-
+      By default in this package, nwaku will subscribe to the `/waku/2/dev-waku/proto` topic. This topic is designed for development purposes and 
+      should have lower bandwidth requirements than nwaku's default topic (though there are **no guarantees** that this is the case). If you wish to
+      subscribe nwaku's default topic, set this to an empty string. If you wish to subscribe to a different topic, specify it here, or specify multiple
+      topics separated by space/s.
+    target:
+      type: environment
+      name: WAKUNODE2_TOPICS
+      service: nwaku
+    required: true
   - title: Privacy settings
     id: privacy
     description: >-

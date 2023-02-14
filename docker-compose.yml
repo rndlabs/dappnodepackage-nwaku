@@ -23,6 +23,7 @@ services:
       WAKUNODE2_STORE_MESSAGE_RETENTION_POLICY: "time:2592000"
       WAKUNODE2_FILTER: "false"
       WAKUNODE2_LIGHTPUSH: "false"
+      WAKUNODE2_TOPICS: /waku/2/dev-waku/proto
       NETWORK: wakuv2.prod
       EXTRA_OPTS: ""
     restart: unless-stopped
