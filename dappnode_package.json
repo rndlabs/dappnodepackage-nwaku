@@ -1,7 +1,7 @@
 {
   "name": "nwaku.dnp.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v0.14.0",
+  "upstreamVersion": "v0.15.0",
   "architectures": ["linux/amd64"],
   "upstreamRepo": "waku-org/nwaku",
   "upstreamArg": "UPSTREAM_VERSION",
@@ -9,9 +9,7 @@
   "description": "Waku is the communication layer for Web3. Decentralized communication that scales. Private. Secure. Runs anywhere.",
   "type": "service",
   "author": "rndlabs <packages@rndlabs.xyz> (https://github.com/rndlabs)",
-  "contributors": [
-    "mfw78 <mfw78@rndlabs.xyz> (https://github.com/mfw78)"
-  ],
+  "contributors": ["mfw78 <mfw78@rndlabs.xyz> (https://github.com/mfw78)"],
   "categories": ["Communications"],
   "repository": {
     "type": "git",
