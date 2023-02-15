@@ -30,7 +30,7 @@ This makes it ideal for running a p2p protocol on mobile, or in other similarly 
 By default, the following is enabled when the user installs the package:
 
 1. `relay` enabled (default per `nwaku` binary).
-2. `PubSub` topic set to as dappnode package default to `/waku/2/dev-waku/proto`. May be customised further in [package configuration](http://my.dappnode/#/packages/nwaku.dnp.dappnode.eth/config).
+2. `PubSub` topic set to `/waku/2/dev-waku/proto` as default for dappnode package. May be customised further in [package configuration](http://my.dappnode/#/packages/nwaku.dnp.dappnode.eth/config).
 2. Secure websockets, with automatic SSL provision using dappnodes HTTPS proxy.
 
 Optionally, through the setup-wizard, the user may enable `filter`, `lightpush` and `store` protocols.
