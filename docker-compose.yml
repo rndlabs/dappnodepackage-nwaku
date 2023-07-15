@@ -5,7 +5,7 @@ services:
     build:
       context: nwaku
       args:
-        UPSTREAM_VERSION: v0.18.0
+        UPSTREAM_VERSION: v0.19.0-rc.0
     ports:
       - "60000:60000/tcp"
       - "60000:60000/udp"
