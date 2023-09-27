@@ -39,7 +39,7 @@ For bleeding edge protocols, such as `RLN`, the user may configure these via the
 
 ### Containers
 
-1. `nwaku` - the core package containing the daemon. This container inherits from the upstream found on [docker hub](https://hub.docker.com/r/statusteam/nim-waku) and provides minor modifications, notably including `openssl` and an `entrypoint.sh` script to facilitate automatic configuration based on the user's settings from the package's setup wizard.
+1. `nwaku` - the core package containing the daemon. This container inherits from the upstream found on [docker hub](https://hub.docker.com/r/wakuorg/nwaku) and provides minor modifications, notably including `openssl` and an `entrypoint.sh` script to facilitate automatic configuration based on the user's settings from the package's setup wizard.
 
 ### Websockets
 
