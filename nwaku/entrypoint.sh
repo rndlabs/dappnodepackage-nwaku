@@ -5,16 +5,16 @@
 if [ -z "${DNS_DISCOVERY_URL}" ]; then
     case "${NETWORK}" in
         wakuv2.prod)
-            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@prod.waku.nodes.status.im"
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://ANEDLO25QVUGJOUTQFRYKWX6P4Z4GKVESBMHML7DZ6YK4LGS5FC5O@prod.wakuv2.nodes.status.im"
             ;;
         wakuv2.test)
-            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@test.waku.nodes.status.im"
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AO47IDOLBKH72HIZZOXQP6NMRESAN7CHYWIBNXDXWRJRZWLODKII6@test.wakuv2.nodes.status.im"
             ;;
         status.prod)
-            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@prod.nodes.status.im"
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AL65EKLJAUXKKPG43HVTML5EFFWEZ7L4LOKTLZCLJASG4DSESQZEC@prod.status.nodes.status.im"
             ;;
         status.test)
-            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AOGECG2SPND25EEFMAJ5WF3KSGJNSGV356DSTL2YVLLZWIV6SAYBM@test.nodes.status.im"
+            export WAKUNODE2_DNS_DISCOVERY_URL="enrtree://AIO6LUM3IVWCU2KCPBBI6FEH2W42IGK3ASCZHZGG5TIXUR56OGQUO@test.status.nodes.status.im"
             ;;
         *)
             echo "NETWORK must be set to wakuv2.prod, wakuv2.test, status.prod or status.test"
